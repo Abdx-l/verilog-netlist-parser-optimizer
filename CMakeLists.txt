@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 3.16)
+project(netlist LANGUAGES CXX)
+set(CMAKE_CXX_STANDARD 17)
+add_executable(netlist netlist.cpp)
+enable_testing()
+add_test(NAME equivalence COMMAND netlist)
+add_test(NAME circuit COMMAND netlist ${CMAKE_SOURCE_DIR}/examples/circuit.v)
